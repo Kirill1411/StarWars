@@ -9,17 +9,17 @@ def events(screen, gun, bullets):
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_d:
+            if event.key == pygame.K_RIGHT:
                 gun.mright = True
-            elif event.key == pygame.K_a:
+            elif event.key == pygame.K_LEFT:
                 gun.mleft = True
             elif event.key == pygame.K_SPACE:
                 new_bullet = Bullet(screen, gun)
                 bullets.add(new_bullet)
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_d:
+            if event.key == pygame.K_RIGHT:
                 gun.mright = False
-            elif event.key == pygame.K_a:
+            elif event.key == pygame.K_LEFT:
                 gun.mleft = False
 
 def update(bg_color, screen, stats, sc, gun, inos, bullets):
@@ -84,7 +84,7 @@ def create_army(screen, inos):
     ino_width = ino.rect.width
     number_ino_x = int((700 - 2 * ino_width) / ino_width)
     ino_height = ino.rect.height
-    number_ino_y = int((800 - 100 - 2 * ino_height) / ino_height)
+    number_ino_y = int((500 - 100 - 2 * ino_height) / ino_height)
 
     for row_number in range(number_ino_y - 1):
         for ino_number in range(number_ino_x):
